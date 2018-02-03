@@ -1269,4 +1269,16 @@ img {
   border: 2px solid #d73930;
 }
 
+.logo-visible{
+  opacity: 1.0
+}
+
+@media screen and (max-width: 800px) {
+  .logo-visible{
+    opacity: 0
+  }
+}
+.web-site-text{
+  color:white;
+}
 /*# sourceMappingURL=style.css.map */
