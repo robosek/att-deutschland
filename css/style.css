@@ -1269,13 +1269,10 @@ img {
   border: 2px solid #d73930;
 }
 
-.logo-visible{
-  opacity: 1.0
-}
-
 @media screen and (max-width: 800px) {
   .logo-visible{
-    opacity: 0
+    width: 130px;
+    height: 50px;
   }
 }
 .web-site-text{
