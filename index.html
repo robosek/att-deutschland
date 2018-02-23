@@ -298,7 +298,7 @@
 					<form class="contact-form" action="mailto:info@att-deutschland.de" method="post" enctype="text/plain">
 						<div class="form-group">
 							<label for="name" class="sr-only">Name</label>
-							<input type="name" class="form-control" id="name" name="name"  placeholder="Name" required>
+							<input type="name" class="form-control" id="name" name="name"  placeholder="Name" required oninvalid="this.setCustomValidity('Haben sie eine flasche?')" onchange="this.setCustomValidity('')">
 						</div>
 						<div class="form-group">
 							<label for="phone" class="sr-only">Tel.nr</label>
@@ -306,11 +306,11 @@
 						</div>
 						<div class="form-group">
 							<label for="email" class="sr-only">Email</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Haben sie eine flasche?')" onchange="this.setCustomValidity('')">
 						</div>
 						<div class="form-group">
 							<label for="message" class="sr-only">Nachricht</label>
-							<textarea class="form-control" id="message" rows="7" placeholder="Nachricht" required></textarea>
+							<textarea class="form-control" id="message" rows="7" placeholder="Nachricht" required oninvalid="this.setCustomValidity('Haben sie eine flasche?')" onchange="this.setCustomValidity('')"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="submit" id="btn-submit" class="btn btn-send-message btn-md" value="SENDEN">
