@@ -17,13 +17,9 @@
   },
   "homepage": "https://github.com/robosek/att-deutschland#readme",
   "dependencies": {
-    "animate.css": "^3.5.2",
     "bootstrap": "^3.3.7",
     "icomoon": "^1.0.0",
     "jquery": "^3.0.0",
-    "jquery.easing": "^1.4.1",
-    "jquery.stellar": "^0.6.2",
-    "owl.carousel": "^2.2.0",
     "simple-line-icons": "^2.2.2",
     "waypoints": "^4.0.1"
   }
