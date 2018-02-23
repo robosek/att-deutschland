@@ -1278,4 +1278,12 @@ img {
 .web-site-text{
   color:white;
 }
+
+.title-big-image{
+  background-image: url(../images/big_photo.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 /*# sourceMappingURL=style.css.map */
