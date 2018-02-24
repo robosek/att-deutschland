@@ -568,8 +568,9 @@ img {
   text-decoration: none;
 }
 
+/* #9c2822; */
 .getting-started {
-  background: #9c2822;
+  background: #fff;
   padding: 60px 0 40px 0;
 }
 .getting-started h3 {
