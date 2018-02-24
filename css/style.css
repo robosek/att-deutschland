@@ -569,7 +569,7 @@ img {
 }
 
 .getting-started {
-  background: #d73930;
+  background: #9c2822;
   padding: 60px 0 40px 0;
 }
 .getting-started h3 {
@@ -1269,7 +1269,7 @@ img {
   border: 2px solid #d73930;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .logo-visible{
     width: 130px;
     height: 50px;
