@@ -159,24 +159,55 @@
 
 	var loadPhotos = function () {
 		var index = 1;
-		var imageElement = createGalleryImage(index);
 		var gallery = document.getElementById('gallery');
 
-		while (index < 28) {
-			gallery.appendChild(imageElement);
-			imageElement = createGalleryImage(++index);
+		while (isNextImage(getImageUrl)('gallery')(index)(fileExists)) {
+			appendImageIntoGallery(createImage)(gallery)(index++);
 		}
 	}
 
-	var createGalleryImage = function (imageNumber) {
+	var createImage = function (imageNumber) {
 		var img = document.createElement("img");
-		$(img).attr('data-image', 'gallery/'+ imageNumber + '.jpg');
+		$(img).attr('data-image', getImageUrl('gallery',imageNumber));
 		$(img).attr('alt', '');
 		$(img).attr('data-description', '');
 
-		img.src = 'gallery_thumbnails/'+ imageNumber +'.jpg';
+		img.src = getImageUrl('gallery_thumbnails',imageNumber);
 
 		return img;
+	}
+
+	var appendImageIntoGallery = function(getImage){
+		return function(gallery){
+			return function(imageIndex){
+				gallery.appendChild(getImage(imageIndex));
+			}
+		}
+	}
+
+	function fileExists(url) {
+		if(url){
+			var req = new XMLHttpRequest();
+			req.open('GET', url, false);
+			req.send();
+			return req.status==200;
+		} else {
+			return false;
+		}
+	}
+
+	var getImageUrl = function(mainFolder, imageNumber) {
+		return mainFolder + '/'+ imageNumber + '.jpg'
+	}
+
+	var isNextImage = function(getImageUrl){
+		return function(mainFolder){
+			return function(imageNumber){
+				return function(checkDirectory){
+					return checkDirectory(getImageUrl(mainFolder, imageNumber))
+				}
+			}
+		}
 	}
 
 	// Document on load.
