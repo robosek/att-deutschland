@@ -2,6 +2,7 @@
 	'use strict';
 	// Init gallery
 	jQuery(document).ready(function(){ 
+		loadPhotos();
 		jQuery("#gallery").unitegallery(); 
 	}); 
 
@@ -156,6 +157,28 @@
 	};
 
 
+	var loadPhotos = function () {
+		var index = 1;
+		var imageElement = createGalleryImage(index);
+		var gallery = document.getElementById('gallery');
+
+		while (index < 28) {
+			gallery.appendChild(imageElement);
+			imageElement = createGalleryImage(++index);
+		}
+	}
+
+	var createGalleryImage = function (imageNumber) {
+		var img = document.createElement("img");
+		$(img).attr('data-image', 'gallery/'+ imageNumber + '.jpg');
+		$(img).attr('alt', '');
+		$(img).attr('data-description', '');
+
+		img.src = 'gallery_thumbnails/'+ imageNumber +'.jpg';
+
+		return img;
+	}
+
 	// Document on load.
 	$(function(){
 		burgerMenu();
@@ -164,6 +187,4 @@
 		navigationSection();
 		footerAnimate();
 	});
-
-
 }());
