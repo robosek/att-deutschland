@@ -1,5 +1,7 @@
 ;(function () {
 	'use strict';
+	var imageNumber = 28;
+
 	// Init gallery
 	jQuery(document).ready(function(){ 
 		loadPhotos();
@@ -156,12 +158,11 @@
 		}
 	};
 
-
 	var loadPhotos = function () {
 		var index = 1;
 		var gallery = document.getElementById('gallery');
 
-		while (isNextImage(getImageUrl)('gallery')(index)(fileExists)) {
+		while (index <= imageNumber) {
 			appendImageIntoGallery(createImage)(gallery)(index++);
 		}
 	}
@@ -185,30 +186,10 @@
 		}
 	}
 
-	function fileExists(url) {
-		if(url){
-			var req = new XMLHttpRequest();
-			req.open('GET', url, false);
-			req.send();
-			return req.status==200;
-		} else {
-			return false;
-		}
-	}
-
 	var getImageUrl = function(mainFolder, imageNumber) {
 		return mainFolder + '/'+ imageNumber + '.jpg'
 	}
 
-	var isNextImage = function(getImageUrl){
-		return function(mainFolder){
-			return function(imageNumber){
-				return function(checkDirectory){
-					return checkDirectory(getImageUrl(mainFolder, imageNumber))
-				}
-			}
-		}
-	}
 
 	// Document on load.
 	$(function(){
